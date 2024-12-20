@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Code Defenders</title>
+</head>
+<body>
+    <header><h1>Code <span>Defenders</span></h1><span><a href="https://code790.github.io/Sign-In/">Sign in</a> <a href="https://code790.github.io/Contact-Us/">Contact us</a></span></header>
+    <main><p><span>Codedefenders1 is an interactive way to learn coding
+We teach html css and more
+We use Gmail to teach coding</span><br>
+
+To start fill in the form and send us code with use to our gmail which is"codedefenders010@gmail.com"<br>
+
+<bold>HTML is the standard markup language for creating Web pages.</p></bold>
+<div><h2>What is the full meaning of HTML?</h2>
+<ul>
+    <li>HTML stands for HYPER TEXT MARK UP LANGUAGE</li>
+    <li>HTML is the standard mark up language for webpages</li>
+    <li>HTML describes the structure of a webpage</li>
+    <li>HTML consists or a series of elements</li>
+    <li>HTML is the element tells the browser how to display the content</li>
+    <li>HTML elements label pieces of content such as "this is a heading","this is a paragraph", "this is a link", etc.</li>
+</ul>
+</div>
+<div>
+    <h2>Example of HTML document</h2>
+    <textarea rows="14" cols="30" disabled>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Page Title</title>
+</head>
+<body> 
+ <h1>This is a heading</h1>
+ <p>This is a paragraph</p>
+</body>
+</html>
+    </textarea>
+</div>
+<div>
+    <h2>Example's explanation</h2>
+    <p>The <u>!DOCTYPE html</u> declaration defines that this document is an HTML5 document<br>
+The <u>html</u> element is the root element of an HTML page<br>
+The <u>head</u> element contains meta information about the HTML page<br>
+The <u>title</u> element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab)<br>
+The <u>body</u> element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.<br>
+The <u>h1</u> element defines the largest heading. It is from h1 to h6. h6 is the smallest<br>
+The <u>p</u> element defines a paragraph</p>
+</div>
+<div>
+    <h2>what is an element</h2>
+    <p>
+An HTML element is defined by a start tag, some content, and an end tag.
+We have the opening tag then the content and then the closing tag</p>
+</div>
+    <div id="editor-container">
+        <div id="html-container">
+            <div id="number-line"></div>
+            <textarea id="html-code" placeholder="Write HTML code here..." onscroll="syncScroll()" oninput="updateNumberLine()" rows="100" cols="70"></textarea>
+        </div>
+        <div id="buttons">
+            <button onclick="runCode()">Run Code</button>
+            <button onclick="downloadCode()">Download</button>
+            <label for="file-input">Open</label>
+            <input type="file" id="file-input" accept=".html" onchange="openFile(event)">
+        </div>
+        <iframe id="output">  </iframe>
+    </div>
+</main>
+<footer>
+    <p>Produced by :David Banjo</p>
+    <p>Join us on youtube <a href="https://www.youtube.com/@CodeDefenders-code">Code Defenders</a><br>
+    Join us on discord 
+    Join us on whatsapp
+    </p>
+</footer>
+    <script>
+        function runCode() {
+            const htmlCode = document.getElementById('html-code').value;
+            const output = document.getElementById('output').contentWindow.document;
+
+            output.open();
+            output.write(htmlCode);
+            output.close();
+        }
+
+        function downloadCode() {
+            const htmlCode = document.getElementById('html-code').value;
+            const blob = new Blob([htmlCode], { type: 'text/html' });
+            const link = document.createElement('a');
+
+            link.download = 'code.html';
+            link.href = URL.createObjectURL(blob);
+            link.click();
+        }
+
+        function openFile(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const content = e.target.result;
+                document.getElementById('html-code').value = content;
+                updateNumberLine();
+            };
+
+            if (file) reader.readAsText(file);
+        }
+
+        function updateNumberLine() {
+            const htmlCode = document.getElementById('html-code');
+            const numberLine = document.getElementById('number-line');
+            const lineCount = htmlCode.value.split('\n').length;
+
+            numberLine.innerHTML = '';
+            for (let i = 1; i <= lineCount; i++) {
+                numberLine.innerHTML += i + '<br>';
+            }
+        }
+
+        function syncScroll() {
+            const htmlCode = document.getElementById('html-code');
+            const numberLine = document.getElementById('number-line');
+            numberLine.scrollTop = htmlCode.scrollTop;
+        }
+
+        // Initialize number line on page load
+        updateNumberLine();
+    </script>
+        <style>
+        body {
+            font-family: Poppins, sans-serif;
+            background-color: #3835B8;
+        }
+        input{
+            display:none;
+        }
+        button{
+            background-color: #FFC500;
+            border: none;
+            padding:7px ;
+        }
+        #number-Line{
+            position: absolute;
+            left: 0;
+            background: rgb(140,140,140);
+        }
+        span a{
+            text-decoration: none;
+            background-color: #9D31D5;
+            color: #000000;
+            padding: 7px;
+        }
+        a:active,a:hover{
+            color: #FF0500;
+        }
+        h1,h2,p,a,li{
+            color: #003343;
+            text-align: center;
+            font-family: Poppins,Sans-Serif;
+        }
+        li{
+            text-align: left;
+        }
+        iframe{
+            width: 100%;
+            height: 100%;
+            background-color: #FFFFFF;
+        }
+        textarea{
+            color: #003343;
+        }
+    </style>
+    </body>
+</html>

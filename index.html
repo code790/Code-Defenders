@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="copyright" content="© 2025 Code Defenders. All rights reserved.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>Code Defenders</title>
 </head>
-<body>
-    <header><h1>Code <span>Defenders</span></h1><span><a href="https://code790.github.io/Sign-In/">Sign in</a> <a href="https://code790.github.io/Contact-Us/">Contact us</a></span></header>
+<body onload="a()">
+    <header><nav><h1>Code <span>Defenders</span></h1><span><a href="https://code790.github.io/Sign-In/">Sign in</a> <a href="https://code790.github.io/Contact-Us/">Contact us</a></span></nav></header>
     <main><p><span>Codedefenders1 is an interactive way to learn coding
 We teach html css and more
 We use Gmail to teach coding</span><br>
@@ -23,8 +24,8 @@ To start fill in the form and send us code with use to our gmail which is"codede
     <li>HTML stands for HYPER TEXT MARK UP LANGUAGE</li>
     <li>HTML is the standard mark up language for webpages</li>
     <li>HTML describes the structure of a webpage</li>
-    <li>HTML consists or a series of elements</li>
-    <li>HTML is the element tells the browser how to display the content</li>
+    <li>HTML consists of a series of elements</li>
+    <li>HTML is the element that tells the browser how to display the content</li>
     <li>HTML elements label pieces of content such as "this is a heading","this is a paragraph", "this is a link", etc.</li>
 </ul>
 </div>
@@ -61,27 +62,39 @@ The <u>p</u> element defines a paragraph</p>
 An HTML element is defined by a start tag, some content, and an end tag.
 We have the opening tag then the content and then the closing tag</p>
 </div>
+<section> 
+         <section class="img"><img width="350px" src="https://plus.unsplash.com/premium_photo-1720287601920-ee8c503af775?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></section><section class="Start_coding"><h2>Start Coding</h2>
+    <p>click on this button to start learning coding and you won't regret it!</p>
+    <a href="https://code790.github.io/Sign-In/" class="btn"> Start now</a></section> 
+
+</section> <br><br><br>
+<!--<section id="testimonie">
+    <article>
+        <h2>John Richard</h2>
+        <p>Since I started using this webite I have been earning money every week</p>
+    </article>
+</section>-->
     <div id="editor-container">
+        <h2>Code Editor</h2>
         <div id="html-container">
             <div id="number-line"></div>
-            <textarea id="html-code" placeholder="Write HTML code here..." onscroll="syncScroll()" oninput="updateNumberLine()" rows="100" cols="70"></textarea>
+            <textarea id="html-code" placeholder="Write HTML code here..." onscroll="syncScroll()" oninput="updateNumberLine()" rows="70" cols="70"></textarea>
         </div>
         <div id="buttons">
-            <button onclick="runCode()">Run Code</button>
-            <button onclick="downloadCode()">Download</button>
+            <button onclick="runCode()" id="runcode">Run Code</button>
+            <button onclick="downloadCode()" id="Download">Download</button>
             <label for="file-input">Open</label>
-            <input type="file" id="file-input" accept=".html" onchange="openFile(event)">
+            <input type="file" id="file-input" accept=".html" onchange="openFile(event)" style="display:none;">,
         </div>
         <iframe id="output">  </iframe>
     </div>
-        <a href="https://code790.github.io/ai/">Try our code generator AI</a>
+    <a href="code.html">try our code generator ai</a>
 </main>
 <footer>
     <p>Produced by :David Banjo</p>
     <p>Join us on youtube <a href="https://www.youtube.com/@CodeDefenders-code">Code Defenders</a><br>
-    Join us on <a href="https://discord.gg/tdHv42ZJyS">discord</a> <br>
-    Join us on <a href="https://chat.whatsapp.com/CCZb3MTjbx2GRsAjvhF4Rw">whatsapp</a><br>
-     © 2025 Code Defenders All rights reserved  
+    Join us on <a href="https://discord.gg/sUsdNvdQ">Discord</a>
+    Join us on <a href="https://chat.whatsapp.com/CCZb3MTjbx2GRsAjvhF4Rw">Whatsapp</a>
     </p>
 </footer>
     <script>
@@ -124,7 +137,7 @@ We have the opening tag then the content and then the closing tag</p>
 
             numberLine.innerHTML = '';
             for (let i = 1; i <= lineCount; i++) {
-                numberLine.innerHTML += i + '';
+                numberLine.innerHTML += i + '<br>';
             }
         }
 
@@ -136,24 +149,33 @@ We have the opening tag then the content and then the closing tag</p>
 
         // Initialize number line on page load
         updateNumberLine();
+        
     </script>
-        <style>
+    <!--<style>
         body {
             font-family: Poppins, sans-serif;
-            background-color: #3835B8;
+            background-color: #ECECEC;
+        }
+        article{
+            background: #FFFFFF;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
         }
         input{
             display:none;
+            box-shadow: 0 0 10px rgba(2, 0, 5, 0.1);
         }
         button{
-            background-color: #FFC500;
+            background-color: #FFBD00;
             border: none;
             padding:7px ;
+            box-shadow: 0 0 10px rgba(2, 0, 5, 0.1);
         }
         #number-Line{
             position: absolute;
             left: 0;
             background: rgb(140,140,140);
+            box-shadow: 0 0 10px rgba(2, 0, 5, 0.1);
         }
         span a{
             text-decoration: none;
@@ -165,7 +187,7 @@ We have the opening tag then the content and then the closing tag</p>
             color: #FF0500;
         }
         h1,h2,p,a,li{
-            color: #003343;
+            color: #5D5D5D;
             text-align: center;
             font-family: Poppins,Sans-Serif;
         }
@@ -176,14 +198,21 @@ We have the opening tag then the content and then the closing tag</p>
             width: 100%;
             height: 100%;
             background-color: #FFFFFF;
-            box-shadow: 5px rgb(0,0,0);
+            box-shadow: 0 0 10px rgba(2, 0, 5, 0.1);
         }
         textarea{
             color: #003343;
+            box-shadow: 0 0 10px rgba(2, 0, 5, 0.1);
         }
-
-            
-    .container {
+        
+        
+        
+        
+        
+        
+        
+        
+            .container {
       text-align: center;
       background: #fff;
       padding: 20px;
@@ -191,6 +220,7 @@ We have the opening tag then the content and then the closing tag</p>
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       width: 90%;
       max-width: 600px;
+      box-shadow: 0 0 10px rgba(2, 0, 5, 0.1);
     }
     textarea, select {
       width: 90%;
@@ -199,6 +229,7 @@ We have the opening tag then the content and then the closing tag</p>
       font-size: 16px;
       border-radius: 5px;
       border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(2, 0, 5, 0.1);
     }
         pre {
       text-align: left;
@@ -210,10 +241,377 @@ We have the opening tag then the content and then the closing tag</p>
       white-space: pre-wrap;
       word-wrap: break-word;
       margin-top: 20px;
+      box-shadow: 0 0 10px rgba(2, 0, 5, 0.1);
     }
     .generateCode{
         padding: 15px;
+        box-shadow: 0 0 10px rgba(2, 0, 5, 0.1);
     }
-    </style>
+    img{
+        width: 300px;
+        box-shadow: 0 0 10px rgba(2, 0, 5, 0.1);
+    }
+    .Start_coding{
+        text-align: center;
+        box-shadow: 0 0 10px rgba(2, 0, 5, 0.1);
+    }
+    .img{
+        text-align: left;
+        box-shadow: 0 0 10px rgba(2, 0, 5, 0.1);
+    }
+    .Start_coding a{
+        background: #C4C4C4;
+        padding: 7px;
+        text-decoration: none;
+        box-shadow: 0 0 10px rgba(2, 0, 5, 0.1);
+    }
+    article{
+            background: #FFFFFF;
+            box-shadow: 0 0 10px rgba(2, 0, 5, 0.1);
+            text-align: right;
+        }
+    </style>-->
+     <!--   <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            color: #909090;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 20px;
+            text-align: center;
+        }
+        h1{
+            color:#FFFFFF;
+            font-size: 35px;
+            font-weight: 30px;
+        }
+        input[type="file"]{
+            display: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+        textarea{
+            box-shadow: 5px #000000;
+        }
+        nav a:hover {
+            color: #007BFF;
+        }
+        .btn{
+            background: #4140FF;
+            padding: 10px;
+            border-radius:32px;
+        }
+        img{
+            width: 300px;
+            float: left;
+        }
+        li{
+            color: #595959;
+        }
+        iframe{
+            box-shadow: 3px #000000;
+            height: 500px;
+            width: 550px;
+        }
+        #runcode,#Download{
+         background: #FFB100;
+         padding: 7px;
+         border: none;
+         box-shadow: 10px #000000;
+        }
+        .btn{
+            background-color: #757575;
+            padding: 5px;
+            border: none;
+            box-shadow: 3px #000000;
+        }
+        .Start_coding{
+            float: right;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #testimonie{
+            text-align: center;
+            width: 200px;
+            background: #007DBD;
+            box-shadow: 7px absolute #000000;
+        }
+        #container{
+            text-align: center;
+            padding: 30px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>-->
+    <style>
+    /* Base Styles */
+    :root {
+        --primary-color: #2A2A72;
+        --secondary-color: #FFA400;
+        --accent-color: #009FFD;
+        --dark-color: #232528;
+        --light-color: #F8F9FA;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        color: var(--dark-color);
+        background-color: var(--light-color);
+        
+    }
+
+    /* Header Styles */
+    header {
+        background-color: var(--primary-color);
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    nav h1 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    nav h1 span {
+        color: var(--secondary-color);
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 2rem;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: var(--secondary-color);
+    }
+
+    /* Main Content Styles */
+    main {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+    }
+
+    section {
+        margin: 3rem 0;
+        padding: 2rem;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        color: #000000;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+    }
+
+    /* Code Editor Section */
+    /* Code Editor Section */
+#editor-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+#buttons {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
+    justify-content: end;
+    margin: 1rem 0;
+    float: right;
+}
+
+
+/* Keep existing button styles, just add these modifications */
+    
+
+    #html-container {
+        position: relative;
+        background: #1e1e1e;
+        border-radius: 8px;
+        overflow: hidden;
+        grid-column: 1 / 2;
+    }
+
+    #number-line {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+        background: #252526;
+        color: #858585;
+        padding: 1rem 0.5rem;
+        text-align: right;
+    }
+
+    #html-code {
+        width: 100%;
+        height: 500px;
+        padding: 1rem 1rem 1rem 3rem;
+        background: #1e1e1e;
+        color: #d4d4d4;
+        border: none;
+        resize: none;
+        font-family: 'Fira Code', monospace;
+        line-height: 1.5;
+    }
+
+    #output {
+        background: white;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        height: 500px;
+    grid-column: 2 / 3;
+    float: left;
+    }
+
+    /* Buttons */
+    #buttons {
+        grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
+    justify-content: start;
+    margin: 1rem 0;
+    }
+
+    button, .btn {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    width: max-content;
+    }
+
+    button:hover, .btn:hover {
+        transform: translateY(-2px);
+        background-color: var(--accent-color);
+    }
+    .runcode,.Download{
+        padding: 8px;
+        width: 40px;
+        height: 20px;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+        background-color: #232528;
+        padding: 7px;
+        border-radius: 7px;
+        
+    }
+
+    /* Testimonial Section */
+    #testimonie article {
+        background: var(--primary-color);
+        color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 400px;
+        margin: 2rem auto;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        #editor-container {
+            grid-template-columns: 1fr;
+        }
+        
+        nav {
+            flex-direction: column;
+            text-align: center;
+            gap: 1rem;
+        }
+        
+        .img, .Start_coding {
+            float: none;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        
+        img {
+            width: 100%;
+            max-width: 400px;
+        }
+    }
+
+    /* Utility Classes */
+    .highlight {
+        color: var(--secondary-color);
+        font-weight: 600;
+    }
+
+    .code-example {
+        background: #f4f4f4;
+        padding: 1rem;
+        border-radius: 5px;
+        margin: 1rem 0;
+        font-family: monospace;
+    }
+    img{
+        border-radius: 15px;
+        border: 2px solid skyblue;
+        padding: 5px;
+    }
+    footer{
+        text-align: center;
+    }
+</style>
+    
     </body>
 </html>
